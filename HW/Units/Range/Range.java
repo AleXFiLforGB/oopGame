@@ -3,7 +3,7 @@ package HW.Units.Range;
 
 import HW.Units.Unit;
 
-public class Range extends Unit {
+public abstract class Range extends Unit {
 
     protected int[] rangeDmg;
     protected float accuracy,penetration;

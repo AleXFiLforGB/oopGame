@@ -2,7 +2,7 @@ package HW.Units.Magican;
 
 import HW.Units.Unit;
 
-public class Magican extends Unit {
+public abstract class Magican extends Unit {
     protected float maxMp,curMp;
     protected int spellDist, spellPower;
     protected int[] magicDmg;

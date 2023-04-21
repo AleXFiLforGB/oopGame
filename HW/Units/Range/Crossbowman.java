@@ -15,4 +15,18 @@ public class Crossbowman extends Range {
     public String toString() {
         return "Crossbowman " + name;
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return "Имя: " + name + " Уровень: " + level + " Макс. ОЖ: " + maxHp +  " ОЖ: " + currentHp +  " Урон: " + dmg
+                +  " Защита: " + defence +  " Скорость: " + speed + " Удача: "+ luck + " Дистанционный урон " + rangeDmg +
+                " Меткость: " + accuracy + " Пробитие: " + penetration + " Дистация стрельбы: " + rangeOfFire +
+                " Максимальное кол-во стрел: " + maxAmmo + " Кол-во стрел: " + ammo + " Скорость перезарядки " + speedOfReload;
+
+    }
 }

@@ -1,6 +1,6 @@
 package HW.Units;
 
-public class Unit {
+public abstract class Unit implements GameInterface{
     protected String name;
     protected int level,defence,speed;
     protected float maxHp,currentHp, luck;

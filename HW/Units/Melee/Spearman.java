@@ -13,6 +13,17 @@ public class Spearman extends Melee {
 
     @Override
     public String toString() {
-        return "Spearmen " + name;
+        return "Spearmen ";
+    }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return "Имя: " + name + " Уровень: " + level + " Макс. ОЖ: " + maxHp +  " ОЖ: " + currentHp +  " Урон: " + dmg
+                +  " Защита: " + defence +  " Скорость: " + speed + " Удача: "+ luck + " Шанс крит урона: " + chanceCritDmg;
     }
 }

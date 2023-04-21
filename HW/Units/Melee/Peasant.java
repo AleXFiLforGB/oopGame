@@ -1,7 +1,6 @@
 package HW.Units.Melee;
 
-import Sem.Sem1.Peasent;
-import Sem.Sem1.Unit;
+
 
 public class Peasant extends Melee {
 
@@ -15,6 +14,19 @@ public class Peasant extends Melee {
 
     @Override
     public String toString() {
-        return "Peasant " + name;
+        return "Peasant ";
+    }
+
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+//        return String.format("Имя: %s, Уровень: %d, Макс. ОЖ: %f, ОЖ: %f, Урон: %d, Защита: %d, Скорость: %d, Удача: %f", name,level,maxHp,currentHp, dmg, defence,speed,luck)
+        return "Имя: " + name + " Уровень: " + level + " Макс. ОЖ: " + maxHp +  " ОЖ: " + currentHp +  " Урон: " + dmg
+                +  " Защита: " + defence +  " Скорость: " + speed + " Удача: "+ luck + " Шанс крит урона: " + chanceCritDmg;
     }
 }

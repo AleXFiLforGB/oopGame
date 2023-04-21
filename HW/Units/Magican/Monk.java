@@ -14,6 +14,18 @@ public class Monk extends Magican {
 
     @Override
     public String toString() {
-        return "Monk " + name;
+        return "Monk ";
+    }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return "Имя: " + name + " Уровень: " + level + " Макс. ОЖ: " + maxHp +  " ОЖ: " + currentHp +  " Урон: " + dmg
+                +  " Защита: " + defence +  " Скорость: " + speed + " Удача: "+ luck + " Макс ОМ: " + maxMp + " ОМ: " +
+                curMp + " Макс дистанция заклинаний: " + spellDist + " Сила заклинаний: " + spellPower +  " Магический урон: " + magicDmg;
     }
 }
