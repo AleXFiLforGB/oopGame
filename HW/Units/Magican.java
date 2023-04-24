@@ -1,4 +1,4 @@
-package HW.Units.Magican;
+package HW.Units;
 
 import HW.Units.Unit;
 
@@ -10,13 +10,14 @@ public abstract class Magican extends Unit {
     protected int[] magicDmg;
 
     public Magican (ArrayList<Unit> team, String name, int level, float maxHp, float currentHp, int [] dmg, int defence,
-                    int speed, float luck, float maxMp, float curMp, int spellDist, int spellPower, int[] magicDmg) {
-        super(team, name,level,maxHp,currentHp,dmg,defence,speed,luck);
+                    int initiative, float luck, float maxMp, float curMp, int spellDist, int spellPower, int[] magicDmg) {
+        super(team, name,level,maxHp,currentHp,dmg,defence,initiative,luck);
         this.maxMp = maxMp;
         this.curMp = curMp;
         this.spellDist = spellDist;
         this.spellPower = spellPower;
         this.magicDmg = magicDmg;
+
     }
 
     protected void castSpell () {};

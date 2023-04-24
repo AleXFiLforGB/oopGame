@@ -1,4 +1,4 @@
-package HW.Units.Range;
+package HW.Units;
 
 
 import HW.Units.Unit;
@@ -12,10 +12,10 @@ public abstract class Range extends Unit {
     protected boolean readyForFire;
     protected int rangeOfFire, speedOfReload, ammo, maxAmmo;
 
-    public Range (ArrayList<Unit> team, String name, int level, float maxHp, float currentHp, int [] dmg, int defence, int speed,
+    public Range (ArrayList<Unit> team, String name, int level, float maxHp, float currentHp, int [] dmg, int defence, int initiative,
                   float luck, int[] rangeDmg, float accuracy, float penetration, boolean readyForFire, int rangeOfFire,
                   int speedOfReload, int ammo, int maxAmmo) {
-        super(team, name,level,maxHp,currentHp,dmg,defence,speed,luck);
+        super(team, name,level,maxHp,currentHp,dmg,defence,initiative,luck);
         this.accuracy = accuracy;
         this.rangeDmg = rangeDmg;
         this.penetration = penetration;
