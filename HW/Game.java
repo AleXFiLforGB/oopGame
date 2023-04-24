@@ -38,7 +38,7 @@ public class Game {
         ArrayList<Unit> teamRed = new ArrayList<>();
         ArrayList<Unit> teamBlue = new ArrayList<>();
 
-        int numOfUnits = 5;
+        int numOfUnits = 10;
 
         addUnits(teamBlue,numOfUnits);
         addUnits(teamRed,numOfUnits);
