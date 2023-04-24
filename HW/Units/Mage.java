@@ -2,11 +2,13 @@ package HW.Units.Magican;
 
 import HW.Units.Unit;
 
+import java.util.ArrayList;
+
 public class Mage extends Magican {
 
-    public Mage (String name) {
-        super(name,1,1,1,new int []{1,1},1,1,1,1,1,
-                1,1,new int []{1,2});
+    public Mage (ArrayList<Unit> team, String name) {
+        super(team, name,1,8,8,new int []{1,1},1,1,1,5,5,
+                3,3,new int []{3,4});
     }
 
     protected void castFireball () {};
@@ -14,7 +16,7 @@ public class Mage extends Magican {
 
     @Override
     public String toString() {
-        return "Mage ";
+        return "Mage " + name;
     }
 
     @Override

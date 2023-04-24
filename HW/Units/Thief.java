@@ -1,19 +1,29 @@
 package HW.Units.Melee;
 
-public class Spearman extends Melee {
+import HW.Units.Unit;
 
-    public Spearman(String name) {
-        super (name,1,1,1, new int[] {1,2},1,1,1,1);
+import java.util.ArrayList;
 
+public class Thief extends Melee {
+
+    protected int stealth;
+    protected int evasion;
+
+    public Thief (ArrayList<Unit> team, String name) {
+        super(team, name,1,12,12,new int[] {1,3},1,1,1,3);
+        this.stealth = 1;
+        this.evasion = 1;
     }
 
-    protected void сounterАttack() {};
+    protected void dodge() {};
 
-    protected void standUp () {};
+    protected void stealth() {};
+
+    protected void setTrap () {};
 
     @Override
     public String toString() {
-        return "Spearmen ";
+        return "Thief " + name;
     }
 
     @Override

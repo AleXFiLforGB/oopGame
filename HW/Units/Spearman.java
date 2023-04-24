@@ -1,22 +1,24 @@
 package HW.Units.Melee;
 
+import HW.Units.Unit;
 
+import java.util.ArrayList;
 
-public class Peasant extends Melee {
+public class Spearman extends Melee {
 
-    public Peasant (String name) {
-        super (name,1,1,1,new int[] {1,2},1,1,1,1);
+    public Spearman(ArrayList<Unit> team, String name) {
+        super (team, name,1,15,15, new int[] {3,4},3,1,1,1);
+
     }
 
-    protected void hopeForLuck () {};
+    protected void сounterАttack() {};
 
-    protected void cookFood () {};
+    protected void standUp () {};
 
     @Override
     public String toString() {
-        return "Peasant ";
+        return "Spearmen " + name;
     }
-
 
     @Override
     public void step() {
@@ -25,7 +27,6 @@ public class Peasant extends Melee {
 
     @Override
     public String getInfo() {
-//        return String.format("Имя: %s, Уровень: %d, Макс. ОЖ: %f, ОЖ: %f, Урон: %d, Защита: %d, Скорость: %d, Удача: %f", name,level,maxHp,currentHp, dmg, defence,speed,luck)
         return "Имя: " + name + " Уровень: " + level + " Макс. ОЖ: " + maxHp +  " ОЖ: " + currentHp +  " Урон: " + dmg
                 +  " Защита: " + defence +  " Скорость: " + speed + " Удача: "+ luck + " Шанс крит урона: " + chanceCritDmg;
     }

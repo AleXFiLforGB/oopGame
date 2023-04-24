@@ -2,11 +2,13 @@ package HW.Units.Range;
 
 import HW.Units.Unit;
 
+import java.util.ArrayList;
+
 public class Sniper extends Range {
 
-    public Sniper (String name) {
-        super(name,1,1,1,new int[] {1,1},1,1,1,new int[] {2,3},
-                1,1,true,3,1,2,2);
+    public Sniper (ArrayList<Unit> team, String name) {
+        super(team,name,1,1,1,new int[] {1,1},1,1,1,new int[] {3,5},
+                1,2,true,3,1,4,4);
     }
 
     protected void getReady() {};
@@ -16,10 +18,7 @@ public class Sniper extends Range {
         return "Sniper " + name;
     }
 
-    @Override
-    public void step() {
 
-    }
 
     @Override
     public String getInfo() {
