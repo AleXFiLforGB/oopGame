@@ -32,6 +32,14 @@ import java.util.Random;
  * + В каждый список добавить по десять экземнляров наследников BaseHero.
  * + В main пройти по спискам и вызвать у всех персонажей getInfo.
  */
+
+/**
+ * ДЗ №4
+ * Создать класс хронящий координаты x и y.
+ * С конструктором и методом принимающим координату а возвращающим расстояние от своей координаты до переданной.
+ * Переопределить метод step в стрелках таким образом, чтобы при наличии стрел и жизней стрелки находили ближайшего противника и наносили ему повреждение.
+ * В своей комманде найти крестьян и, если крестьянин жив и не занят, занять его доставкой стрел. Иначе стрелы уходят по одной на выстрел.
+ */
 public class Game {
     public static void main(String[] args) {
 
@@ -40,34 +48,20 @@ public class Game {
 
         int numOfUnits = 10;
 
-        addUnits(teamBlue,numOfUnits);
+        addUnitsForTeamBlue(teamBlue,numOfUnits);
         addUnits(teamRed,numOfUnits);
 
-        teamRed.forEach(n -> n.step());
-
-
-        System.out.println("Команда Красных:");
-        teamRed.forEach(n -> System.out.println(n.getInfo()));
-
-//        teamRed.forEach(n -> System.out.println(n.getInfo()));
         System.out.println(teamRed);
-        teamRed.sort(Unit::compareTo);
-        System.out.println(teamRed);
+        System.out.println(teamBlue);
+        teamRed.forEach(n -> n.step(teamBlue));
+        teamBlue.forEach(n -> n.step(teamRed));
 
-        //вывод команд
-
-
-//        System.out.println("Команда Красных: ");
-//        System.out.println(teamRed);
-//
-//        System.out.println("Команда Синих: ");
-//        System.out.println(teamBlue);
-
-        // Вывод всех пар-ров команд
-//        System.out.println("Команда Синих: ");
-//        printUnits(teamBlue);
 
     }
+
+
+
+
 
     public static String getNames() {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
@@ -77,29 +71,60 @@ public class Game {
     public static void addUnits (ArrayList<Unit> team, int numOfUnits) {
 
         Random r = new Random();
-        for (int i = 0; i < numOfUnits; i++) {
+        for (int i = 1; i < numOfUnits + 1; i++) {
             int val = r.nextInt(7);
             switch (val) {
                 case 0:
-                    team.add(new Monk(team, getNames()));
+                    team.add(new Monk(team, getNames(), 1, i));
                     break;
                 case 1:
-                    team.add(new Sniper(team, getNames()));
+                    team.add(new Sniper(team, getNames(),1, i));
                     break;
                 case 2:
-                    team.add(new Crossbowman(team, getNames()));
+                    team.add(new Crossbowman(team, getNames(),1, i));
                     break;
                 case 3:
-                    team.add(new Mage(team, getNames()));
+                    team.add(new Mage(team, getNames(),1, i));
                     break;
                 case 5:
-                    team.add(new Thief(team, getNames()));
+                    team.add(new Thief(team, getNames(),1, i));
                     break;
                 case 6:
-                    team.add(new Spearman(team, getNames()));
+                    team.add(new Spearman(team, getNames(),1, i));
                     break;
                 default:
-                    team.add(new Peasant(team, getNames()));
+                    team.add(new Peasant(team, getNames(),1, i));
+                    break;
+            }
+        }
+    }
+
+    public static void addUnitsForTeamBlue (ArrayList<Unit> team, int numOfUnits) {
+
+        Random r = new Random();
+        for (int i = 1; i < numOfUnits + 1; i++) {
+            int val = r.nextInt(7);
+            switch (val) {
+                case 0:
+                    team.add(new Monk(team, getNames(), 10, i));
+                    break;
+                case 1:
+                    team.add(new Sniper(team, getNames(),10, i));
+                    break;
+                case 2:
+                    team.add(new Crossbowman(team, getNames(),10, i));
+                    break;
+                case 3:
+                    team.add(new Mage(team, getNames(),10, i));
+                    break;
+                case 5:
+                    team.add(new Thief(team, getNames(),10, i));
+                    break;
+                case 6:
+                    team.add(new Spearman(team, getNames(),10, i));
+                    break;
+                default:
+                    team.add(new Peasant(team, getNames(),10, i));
                     break;
             }
         }

@@ -1,15 +1,12 @@
 package HW.Units;
 
-import HW.Units.Melee;
-import HW.Units.Unit;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Spearman extends Melee {
 
-    public Spearman(ArrayList<Unit> team, String name) {
-        super (team, name,1,15,15, new int[] {3,4},3,3,1,1);
+    public Spearman(ArrayList<Unit> team, String name,int x, int y) {
+        super (team, name,1,15,15, new int[] {3,4},3,3,1,1, x, y);
         this.unitClass = "Spearman";
     }
 
@@ -23,9 +20,10 @@ public class Spearman extends Melee {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Unit> team1) {
         System.out.println("I am " + name + "и я пока ничего не умею");
     }
+
 
     @Override
     public String getInfo() {

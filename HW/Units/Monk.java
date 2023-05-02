@@ -1,17 +1,14 @@
 package HW.Units;
 
-import HW.Units.Magican;
-import HW.Units.Unit;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Monk extends Magican {
 
-    public Monk (ArrayList<Unit> team, String name) {
+    public Monk (ArrayList<Unit> team, String name, int x, int y) {
         super(team, name,1,9,9,new int[] {1,2},1,2,2,6,
-                6,1,2,new int[] {1,3});
+                6,1,2,new int[] {1,3}, x, y);
         this.unitClass = "Monk";
     }
 
@@ -35,7 +32,7 @@ public class Monk extends Magican {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Unit> team1) {
 
         int index_damaged = 0;
         for (int i = 0; i < team.size(); i++) {

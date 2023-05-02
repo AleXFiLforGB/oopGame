@@ -1,16 +1,13 @@
 package HW.Units;
 
 
-import HW.Units.Melee;
-import HW.Units.Unit;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Peasant extends Melee {
 
-    public Peasant (ArrayList<Unit> team, String name) {
-        super (team, name,1,6,6,new int[] {1,2},1,1,2,1);
+    public Peasant (ArrayList<Unit> team, String name, int x, int y) {
+        super (team, name,1,6,6,new int[] {1,2},1,1,2,1, x, y);
         this.unitClass = "Peasant";
     }
 
@@ -25,7 +22,7 @@ public class Peasant extends Melee {
 
 
     @Override
-    public void step() {
+    public void step(ArrayList<Unit> team1) {
         System.out.println("I am " + name + "и я пока ничего не умею");
     }
 

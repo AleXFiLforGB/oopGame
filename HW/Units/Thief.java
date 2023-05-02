@@ -1,8 +1,5 @@
 package HW.Units;
 
-import HW.Units.Melee;
-import HW.Units.Unit;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,8 +8,8 @@ public class Thief extends Melee {
     protected int stealth,evasion;
 
 
-    public Thief (ArrayList<Unit> team, String name) {
-        super(team, name,1,12,12,new int[] {1,3},1,3,1,3);
+    public Thief (ArrayList<Unit> team, String name, int x, int y) {
+        super(team, name,1,12,12,new int[] {1,3},1,3,1,3, x, y);
         this.stealth = 1;
         this.evasion = 1;
         this.unitClass = "Thief";
@@ -30,7 +27,7 @@ public class Thief extends Melee {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Unit> team1) {
         System.out.println("I am " + name + "и я пока ничего не умею");
     }
 

@@ -5,23 +5,29 @@ import java.util.Arrays;
 
 public class Crossbowman extends Range {
 
-    public Crossbowman (ArrayList<Unit> team, String name) {
-        super(team, name,1,1,1,new int[] {1,2},1,4,1,new int[] {4,7},1,2,
-                true,2,2,3,3);
+    public Crossbowman (ArrayList<Unit> team, String name, int x, int y) {
+        super(team, name,1,4,4,new int[] {1,2},2,4,1,new int[] {4,7},1,4,
+                true,5,2,4,3, x, y);
         this.unitClass = "Crossbowman";
     }
 
-    protected void reload () {};
+    protected void reload () {
+        System.out.println(unitClass + " " + name + " тратит ход на зарядку арбалета.");
+    };
+
+    @Override
+    public void step(ArrayList<Unit> team1) {
+        if (readyForFire == true) {
+            super.step(team1);
+            readyForFire = false;
+        } else reload();
+    }
 
     @Override
     public String toString() {
         return "Crossbowman " + name;
     }
 
-    @Override
-    public void step() {
-        System.out.println("I am " + name + "и я пока ничего не умею");
-    }
 
     @Override
     public String getInfo() {
@@ -31,4 +37,6 @@ public class Crossbowman extends Range {
                 " Максимальное кол-во стрел: " + maxAmmo + " Кол-во стрел: " + ammo + " Скорость перезарядки " + speedOfReload;
 
     }
+
+
 }
